@@ -1,0 +1,79 @@
+
+
+
+document.getElementById("p1").addEventListener('keydown', function (e) {
+    if(e.key == "." || e.key == ",")
+    {
+      window.alert(`Remove ${e.key} and then enter your value`);
+    }
+    }, false);
+
+    
+document.getElementById("p2").addEventListener('keydown', function (e) {
+    if(e.key == "." || e.key == ",")
+    {
+      window.alert(`Remove ${e.key} and then enter your value`);
+    }
+    }, false);
+
+
+function sign(v1,v2)
+{
+    if(v1 == 160)
+    {
+  while(v1>0)
+  {
+     if(v1%10 == "+")
+     {
+        document.getElementById("t2").innerHTML ="Your Answer is Correct for Q1";
+
+     }
+     v1 = v1/10;
+  }
+}
+
+  while(v2>0)
+  {
+  if(v2%10 == "+")
+  {
+    document.getElementById("t2").innerHTML ="Your Answer is Correct for Q1";
+
+  }
+  v2 = v2/10;
+}
+}
+
+document.getElementById("btn").onclick = myFunction;
+
+  
+
+function myFunction() {
+    var x = document.getElementById("p1").value;
+    var y = document.getElementById("p2").value;
+
+    sign(x,y);
+    
+    if(x == 160)
+    {
+        document.getElementById("t2").innerHTML ="Your Answer is Correct for Q1";
+
+    }
+    else
+    {
+        document.getElementById("t2").innerHTML =`Your Answer is Incorrect ,The correct answer is 160`;
+
+    }
+
+    if(y == 414)
+    {
+        document.getElementById("t3").innerHTML ="Your Answer is Correct for Q2";
+
+    }
+    else
+    {
+        document.getElementById("t3").innerHTML ="Your Answer is Incorrect ,The correct answer is 414";
+
+    }
+
+  }
+  
