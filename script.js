@@ -1,10 +1,11 @@
 
 var count = 0;
-
+var k =0;
 document.getElementById("p1").addEventListener('keydown', function (e) {
     if(e.key == "." || e.key == ",")
     {
        count++;
+       window.alert("Remove dot and comma")
 
     }
     }, false);
@@ -26,8 +27,13 @@ function sign(a)
   {
   if(a.includes("+"))
   {
+    k++;
     window.alert("Your Answer can be simplified further");
-
+  
+  }
+  else
+  {
+    k=0;
   }
 }
   
@@ -44,14 +50,25 @@ function myFunction() {
     {
       count = 0;
         window.alert("Remove fullstop and comma from your answer");
+        document.getElementById("t1").innerHTML ="Answer is incorrect";
+
     }
     else
     {
-    
-    if(a == 160)
+      console.log(k);
+    if(a.includes(".") || a.includes(","))
+    {
+      document.getElementById("t1").innerHTML ="Answer is incorrect";
+
+    }
+    else if(a == 160 && k == 0)
     {
         document.getElementById("t1").innerHTML ="Your Answer is Correct for Q1";
 
+    }
+    else if(k>0)
+    {
+      document.getElementById("t1").innerHTML =" ";
     }
     else
     {
